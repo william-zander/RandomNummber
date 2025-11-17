@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RandomNummber.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            BackgroundColor="Black">
+            
+            
+            <Picker x:Name="picker"
+         BackgroundColor="White"
+         TitleColor="White"
+      Title="Select a difficulty"
+         SelectedIndexChanged="OnPickerSelectedIndexChanged"
+         >
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Easy</x:String>
+                        <x:String>Medium</x:String>
+                        <x:String>Hard</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label
+     Text="Guess a nummber"
+     Style="{StaticResource Headline}"
+     SemanticProperties.HeadingLevel="Level1" 
+     TextColor="White"/>
+
+            <Label 
+     x:Name="ShowGuess"
+     HorizontalOptions="Center"
+     FontSize="Medium"
+     TextColor="White"/>
+
+            <Entry
+     x:Name="UserInputEntry"
+     BackgroundColor="White"
+     TextColor="Black"
+     Placeholder="Enter a your guess"
+     PlaceholderColor="Black"/>
+
+            <Button
+  x:Name="GuessOfUser"
+  Text="Guess"
+  Clicked="UserGuess"  />
+
+
+            <Button
+     x:Name="Restart"
+     Clicked="Reset_Guess"
+     Text="Restart"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
