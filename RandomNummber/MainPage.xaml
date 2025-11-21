@@ -8,15 +8,25 @@
             Padding="30,0"
             Spacing="25"
             BackgroundColor="Black">
+           
+            <Label
+            Text="Score"
+             TextColor="White"/>
+
+            <Label
+            x:Name="countLabel"
+            TextColor="White"
+            />
+             
             
-            
+           
             <Picker x:Name="picker"
          BackgroundColor="White"
          TitleColor="White"
       Title="Select a difficulty"
          SelectedIndexChanged="OnPickerSelectedIndexChanged"
          >
-
+             
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Easy</x:String>
@@ -48,13 +58,21 @@
             <Button
   x:Name="GuessOfUser"
   Text="Guess"
-  Clicked="UserGuess"  />
+  Clicked="UserGuess"
+  IsEnabled="False"
+  />
 
 
             <Button
-     x:Name="Restart"
-     Clicked="Reset_Guess"
-     Text="Restart"/>
+               x:Name="Restart"
+               Clicked="Reset_Guess"
+               Text="Restart"
+                Margin="10"
+                IsEnabled="False"/>
+
+            
+
+
 
         </VerticalStackLayout>
     </ScrollView>

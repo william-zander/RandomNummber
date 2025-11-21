@@ -5,7 +5,7 @@ namespace RandomNummber
     public partial class MainPage : ContentPage
     {
         int computerRandom = 0;
-        int score = 0;
+        int count = 0;
 
         public MainPage()
         {
@@ -72,7 +72,7 @@ namespace RandomNummber
                     Debug.WriteLine("du valde rätt");
                     ShowGuess.Text = $"{UserInputEntry.Text} is correct ";
                     GuessOfUser.IsEnabled = false;
-                    
+                    picker.IsEnabled = true;
 
                 }
             }
@@ -84,9 +84,12 @@ namespace RandomNummber
         }
         private void Reset_Guess(object? sender, EventArgs e)
         {
+            count++;
+            countLabel.Text = count.ToString();
             GuessOfUser.IsEnabled = true;
-
         }
+
+
     }
 
 
