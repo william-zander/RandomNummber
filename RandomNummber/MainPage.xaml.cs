@@ -53,7 +53,7 @@ namespace RandomNummber
                 } //Hard
 
             }
-        }
+        } //Svårhetsgrad programet
         private void UserGuess(object? sender, EventArgs e)
         {
             if (int.TryParse(UserInputEntry.Text, out int aCorrectInteger))
@@ -101,20 +101,20 @@ namespace RandomNummber
                 Debug.WriteLine("enter a Correct integer");
                 ShowGuess.Text = "enter a correctos numbreros";
             }
-        }
+        } //är programet för gisningar och att visa upp dem för spelarn
         private void Reset_Guess(object? sender, EventArgs e)
         {
             GuessOfUser.IsEnabled = true;
             Restart.IsEnabled = false;
             
-        }
+        } //låtter dig gisa igen effter man gisat
         private void Reset_Game(object? sender, EventArgs e) 
         {
             picker.IsEnabled = true;
             GameRestart.IsEnabled = false;
             GameRestart.IsVisible = false;
             
-        }
+        } // startar om spelet och ger dig score för att se hur bra du kan gissa
     }
 
 
