@@ -14,18 +14,14 @@
              FontSize="Large" 
              TextColor="White"/>
 
-            <Label
-            x:Name="countLabel"
-            TextColor="White"
-             FontSize="30"
-            />
+            
 
             <Picker x:Name="picker"
-         BackgroundColor="White"
-         TitleColor="White"
-      Title="Select a difficulty"
-         SelectedIndexChanged="OnPickerSelectedIndexChanged"
-         >
+             BackgroundColor="White"
+             TitleColor="White"
+             Title="Select a difficulty"
+             SelectedIndexChanged="OnPickerSelectedIndexChanged"
+             >
              
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -35,6 +31,12 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
+
+            <Label
+             x:Name="countLabel"
+             TextColor="Gold"
+             FontSize="30"
+            />
 
             <Label
      Text="Guess a nummber"

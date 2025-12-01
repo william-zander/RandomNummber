@@ -7,7 +7,7 @@ namespace RandomNummber
     {
         int computerRandom = 0;
         int count = 0;
-        int attempt = 0;
+       
         public MainPage()
         {
             InitializeComponent();
@@ -55,6 +55,7 @@ namespace RandomNummber
         } //Svårhetsgrad programet
         private void UserGuess(object? sender, EventArgs e)
         {
+           
             if (int.TryParse(UserInputEntry.Text, out int aCorrectInteger))
             {
                 Debug.WriteLine(computerRandom);
@@ -68,7 +69,7 @@ namespace RandomNummber
                     Restart.IsEnabled = true;
                     Restart.IsVisible = true;
                     wrong.IsVisible = true;
-
+                    right.IsVisible = false;
                 }
                 else if (computerRandom > aCorrectInteger)
                 {
@@ -80,6 +81,7 @@ namespace RandomNummber
                     Restart.IsEnabled = true;
                     Restart.IsVisible = true;
                     wrong.IsVisible= true;
+                    right.IsVisible = false;
                 }
                 if (computerRandom == aCorrectInteger)
                 {
@@ -94,6 +96,7 @@ namespace RandomNummber
                     count++;
                     countLabel.Text = $"score {count}";
                     right.IsVisible = true;
+                    wrong.IsVisible = false;
                 }
             }
             else
@@ -113,7 +116,6 @@ namespace RandomNummber
             picker.IsEnabled = true;
             GameRestart.IsEnabled = false;
             GameRestart.IsVisible = false;
-            
         } // startar om spelet och ger dig score för att se hur bra du kan gissa
     }
 
