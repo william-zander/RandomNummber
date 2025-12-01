@@ -66,11 +66,16 @@
             <Button
                x:Name="Restart"
                Clicked="Reset_Guess"
-               Text="Restart"
+               Text="try again"
                 Margin="10"
                 IsEnabled="False"/>
 
-            
+            <Button
+              x:Name="GameRestart"
+              Clicked="Reset_Game"
+              Text="restart"
+              IsVisible="False"
+              IsEnabled="False"/>
 
 
 

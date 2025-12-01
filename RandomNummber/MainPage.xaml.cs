@@ -48,7 +48,6 @@ namespace RandomNummber
         }
         private void UserGuess(object? sender, EventArgs e)
         {
-
             if (int.TryParse(UserInputEntry.Text, out int aCorrectInteger))
             {
                 Debug.WriteLine(computerRandom);
@@ -58,6 +57,7 @@ namespace RandomNummber
                     Debug.WriteLine("The correct nummber is smaller");
                     ShowGuess.Text = $"{UserInputEntry.Text} is to big guess one more time ";
                     GuessOfUser.IsEnabled = false;
+                    Restart.IsEnabled = true;
                 }
                 else if (computerRandom > aCorrectInteger)
                 {
@@ -65,6 +65,7 @@ namespace RandomNummber
                     Debug.WriteLine("The correct nummber is bigger");
                     ShowGuess.Text = $"{UserInputEntry.Text} is to small guess one more time";
                     GuessOfUser.IsEnabled = false;
+                    Restart.IsEnabled = true;
                 }
                 if (computerRandom == aCorrectInteger)
                 {
@@ -72,7 +73,6 @@ namespace RandomNummber
                     Debug.WriteLine("du valde rätt");
                     ShowGuess.Text = $"{UserInputEntry.Text} is correct ";
                     GuessOfUser.IsEnabled = false;
-                    picker.IsEnabled = true;
 
                 }
             }
@@ -86,10 +86,12 @@ namespace RandomNummber
         {
             count++;
             countLabel.Text = count.ToString();
-            GuessOfUser.IsEnabled = true;
         }
-
-
+        private void Reset_Game(object? sender, EventArgs e) 
+        {
+            picker.IsEnabled = true;
+            count = 0;
+        }
     }
 
 
