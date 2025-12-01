@@ -30,7 +30,6 @@ namespace RandomNummber
                     GuessOfUser.IsEnabled = true;
                     picker.IsEnabled = false;
                     Debug.WriteLine(computerRandom);
-                    
                 }  // Easy
                 else if (selectedIndex == 1)
                 {
@@ -69,6 +68,7 @@ namespace RandomNummber
                     Restart.IsEnabled = true;
                     Restart.IsVisible = true;
                     wrong.IsVisible = true;
+
                 }
                 else if (computerRandom > aCorrectInteger)
                 {
@@ -92,7 +92,7 @@ namespace RandomNummber
                     Restart.IsVisible = false;
                     Restart.IsEnabled = false;
                     count++;
-                    countLabel.Text = count.ToString();
+                    countLabel.Text = $"score {count}";
                     right.IsVisible = true;
                 }
             }

@@ -8,32 +8,17 @@
             Padding="30,0"
             Spacing="25"
             BackgroundColor="Black">
-           
             <Label
-            Text="score"
+             Text="My Fantastic nummber game"
+             x:Name="Titel"
+             FontSize="Large" 
              TextColor="White"/>
 
             <Label
             x:Name="countLabel"
             TextColor="White"
+             FontSize="30"
             />
-
-            <Image     
-             x:Name="right"   
-             Source="done.jpg"
-             Aspect="AspectFill"
-             WidthRequest="250"
-             />
-
-            <Image     
-             x:Name="wrong"   
-             Source="x.jpg"
-             Aspect="AspectFill"
-             WidthRequest="250"
-             />
-
-
-
 
             <Picker x:Name="picker"
          BackgroundColor="White"
@@ -56,7 +41,21 @@
      Style="{StaticResource Headline}"
      SemanticProperties.HeadingLevel="Level1" 
      TextColor="White"/>
+            
+ <Image     
+             x:Name="right"   
+             Source="done.jpg"
+             Aspect="AspectFill"
+             WidthRequest="250"
+             />
 
+            <Image     
+             x:Name="wrong"   
+             Source="x.jpg"
+             Aspect="AspectFill"
+             WidthRequest="250"
+             />
+            
             <Label 
      x:Name="ShowGuess"
      HorizontalOptions="Center"
