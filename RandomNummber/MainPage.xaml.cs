@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿
+using System.Diagnostics;
 
 namespace RandomNummber
 {
@@ -6,10 +7,12 @@ namespace RandomNummber
     {
         int computerRandom = 0;
         int count = 0;
-
+        int attempt = 0;
         public MainPage()
         {
             InitializeComponent();
+            right.IsVisible = false;
+            wrong.IsVisible = false;
         }
 
         void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -26,6 +29,8 @@ namespace RandomNummber
                     Debug.WriteLine(computerRandom);
                     GuessOfUser.IsEnabled = true;
                     picker.IsEnabled = false;
+                    Debug.WriteLine(computerRandom);
+                    
                 }  // Easy
                 else if (selectedIndex == 1)
                 {
@@ -34,6 +39,7 @@ namespace RandomNummber
                     Debug.WriteLine(computerRandom);
                     GuessOfUser.IsEnabled = true;
                     picker.IsEnabled = false;
+                    Debug.WriteLine(computerRandom);
                 } //Medium
                 else if (selectedIndex == 2)
                 {
@@ -41,7 +47,9 @@ namespace RandomNummber
                     computerRandom = random.Next(1, 1000);
                     Debug.WriteLine(computerRandom);
                     GuessOfUser.IsEnabled = true;
-                    picker.IsEnabled = false;
+                    picker.IsEnabled = false; 
+                    Debug.WriteLine(computerRandom);
+
                 } //Hard
 
             }
@@ -57,7 +65,10 @@ namespace RandomNummber
                     Debug.WriteLine("The correct nummber is smaller");
                     ShowGuess.Text = $"{UserInputEntry.Text} is to big guess one more time ";
                     GuessOfUser.IsEnabled = false;
+                    GuessOfUser.IsVisible= false;
                     Restart.IsEnabled = true;
+                    Restart.IsVisible = true;
+                    wrong.IsVisible = true;
                 }
                 else if (computerRandom > aCorrectInteger)
                 {
@@ -65,7 +76,10 @@ namespace RandomNummber
                     Debug.WriteLine("The correct nummber is bigger");
                     ShowGuess.Text = $"{UserInputEntry.Text} is to small guess one more time";
                     GuessOfUser.IsEnabled = false;
+                    GuessOfUser.IsVisible = false;
                     Restart.IsEnabled = true;
+                    Restart.IsVisible = true;
+                    wrong.IsVisible= true;
                 }
                 if (computerRandom == aCorrectInteger)
                 {
@@ -73,7 +87,13 @@ namespace RandomNummber
                     Debug.WriteLine("du valde rätt");
                     ShowGuess.Text = $"{UserInputEntry.Text} is correct ";
                     GuessOfUser.IsEnabled = false;
-
+                    GameRestart.IsVisible = true;
+                    GameRestart.IsEnabled = true;
+                    Restart.IsVisible = false;
+                    Restart.IsEnabled = false;
+                    count++;
+                    countLabel.Text = count.ToString();
+                    right.IsVisible = true;
                 }
             }
             else
@@ -84,13 +104,16 @@ namespace RandomNummber
         }
         private void Reset_Guess(object? sender, EventArgs e)
         {
-            count++;
-            countLabel.Text = count.ToString();
+            GuessOfUser.IsEnabled = true;
+            Restart.IsEnabled = false;
+            
         }
         private void Reset_Game(object? sender, EventArgs e) 
         {
             picker.IsEnabled = true;
-            count = 0;
+            GameRestart.IsEnabled = false;
+            GameRestart.IsVisible = false;
+            
         }
     }
 

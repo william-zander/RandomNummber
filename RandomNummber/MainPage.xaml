@@ -10,16 +10,31 @@
             BackgroundColor="Black">
            
             <Label
-            Text="Score"
+            Text="score"
              TextColor="White"/>
 
             <Label
             x:Name="countLabel"
             TextColor="White"
             />
-             
-            
-           
+
+            <Image     
+             x:Name="right"   
+             Source="done.jpg"
+             Aspect="AspectFill"
+             WidthRequest="250"
+             />
+
+            <Image     
+             x:Name="wrong"   
+             Source="x.jpg"
+             Aspect="AspectFill"
+             WidthRequest="250"
+             />
+
+
+
+
             <Picker x:Name="picker"
          BackgroundColor="White"
          TitleColor="White"
@@ -68,7 +83,8 @@
                Clicked="Reset_Guess"
                Text="try again"
                 Margin="10"
-                IsEnabled="False"/>
+                IsEnabled="False"
+                IsVisible="False"/>
 
             <Button
               x:Name="GameRestart"
